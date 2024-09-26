@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.header {
+    background: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header__title {
+    margin-bottom: 10px;
+}
+
+.header__nav {
+    margin-top: 10px;
+}
+
+.header__menu {
+    list-style: none;
+}
+
+.header__link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.header__link:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding-top: 80px;
+}
+
+.catalog {
+    padding: 20px;
+}
+
+.catalog__title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.catalog__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.catalog__item {
+    flex: 1 1 30%;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.catalog__img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.catalog__button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.catalog__button:hover {
+    background-color: #45a049;
+}
+
+.about {
+    padding: 20px;
+    background-color: white;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.price-list {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.price-list__title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.price-list__table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки одинаковой ширины */
+    gap: 10px;
+}
+
+.price-list__header {
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.price-list__row {
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.price-list__row:nth-child(odd) {
+    background-color: #e0f7e0; /* Стили для нечётных строк */
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #4CAF50;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
