@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин фруктов</title>
+    <link rel="stylesheet" href="./styles/style3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body> 
+    <header class="header">
+        <h1 class="header__title">Магазин свежих фруктов</h1>
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li><a href="#catalog" class="header__link">Каталог</a></li>
+                <li><a href="#about" class="header__link">О нас</a></li>
+                <li><a href="#contacts" class="header__link">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="catalog" class="catalog">
+            <h2 class="catalog__title">Наши фрукты</h2>
+            <div class="catalog__items">
+                <article class="catalog__item">
+                    <h3 class="catalog__item-title title-red">Яблоки</h3>
+                    <img src="https://avatars.mds.yandex.net/i?id=1dda3e77ef719720fa23fcdbef0e5c29_l-5873744-images-thumbs&n=13" alt="Яблоки" width="180" class="catalog__img img-small">
+                    <p class="catalog__price">Цена: <span class="price">100 рублей за 1 кг</span></p>
+                    <p class="catalog__description">Сочные и хрустящие яблоки, выращенные в экологически чистых садах.</p>
+                    <button class="catalog__button btn-blue">Купить</button>
+                </article>
+
+                <article class="catalog__item">
+                    <h3 class="catalog__item-title title-green">Бананы</h3>
+                    <img src="https://avatars.mds.yandex.net/i?id=f5e8b50433c8c00a9ac7b5c1a4345a0cd79263c1-5132586-images-thumbs&n=13" alt="Бананы" width="220" class="catalog__img img-large">
+                    <p class="catalog__price">Цена: <span class="price">150 рублей за 1 кг</span></p>
+                    <p class="catalog__description">Свежие бананы, привезённые с тропических плантаций.</p>
+                    <button class="catalog__button btn-green">Купить</button>
+                </article>
+
+                <article class="catalog__item">
+                    <h3 class="catalog__item-title title-orange">Апельсины</h3>
+                    <img src="https://avatars.mds.yandex.net/get-mpic/5031100/img_id1059595353447848448.jpeg/orig" alt="Апельсины" width="200" class="catalog__img img-medium">
+                    <p class="catalog__price">Цена: <span class="price">120 рублей за 1 кг</span></p>
+                    <p class="catalog__description">Спелые апельсины с ярким вкусом и ароматом.</p>
+                    <button class="catalog__button btn-orange">Купить</button>
+                </article>
+
+                <article class="catalog__item">
+                    <h3 class="catalog__item-title title-yellow">Груши</h3>
+                    <img src="https://avatars.mds.yandex.net/i?id=3356753ce649455b879e39c8127322f49ec87452-5561909-images-thumbs&n=13" alt="Груши" width="160" class="catalog__img img-small">
+                    <p class="catalog__price">Цена: <span class="price">110 рублей за 1 кг</span></p>
+                    <p class="catalog__description">Сладкие и сочные груши, идеальны для перекусов и десертов.</p>
+                    <button class="catalog__button btn-yellow">Купить</button>
+                </article>
+
+                <article class="catalog__item">
+                    <h3 class="catalog__item-title title-purple">Киви</h3>
+                    <img src="https://s.alicdn.com/@sc04/kf/A195f0351e8664ef498978b322ffa0830I.jpg" alt="Киви" width="240" class="catalog__img img-large">
+                    <p class="catalog__price">Цена: <span class="price">180 рублей за 1 кг</span></p>
+                    <p class="catalog__description">Экзотические киви с насыщенным вкусом и витаминным зарядом.</p>
+                    <button class="catalog__button btn-purple">Купить</button>
+                </article>
+
+                <article class="catalog__item">
+                    <h3 class="catalog__item-title title-pink">Клубника</h3>
+                    <img src="https://svechmag.ru/wa-data/public/shop/products/98/19/1998/images/1200/1200.750x0.jpg" alt="Клубника" width="200" class="catalog__img img-medium">
+                    <p class="catalog__price">Цена: <span class="price">200 рублей за 1 кг</span></p>
+                    <p class="catalog__description">Сладкая и ароматная клубника, идеально подходит для десертов и смузи.</p>
+                    <button class="catalog__button btn-pink">Купить</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>О нашем магазине</h2>
+            <p>Мы продаём только <strong>самые свежие</strong> и <em>качественные</em> фрукты, выращенные с заботой о природе и человеке.</p>
+            <pre>
++-------------------------------+
+|   Добро пожаловать в наш      |
+|   магазин свежих фруктов!     |
+|                               |
+|   Мы гарантируем качество     |
+|   и свежесть каждого продукта.|
++-------------------------------+
+            </pre>
+            <div class = "banner">
+                <h3>Наше кредо</h3>
+                <blockquote>
+                    <p><em>«Лучше всего живётся тем, кто живёт с радостью в сердце.»</em></p>
+                    <footer>— Анна Ахматова</footer>
+                </blockquote>
+            </div>
+            <h3>Формула успеха</h3>
+            <p><strong class="underline"><ins>Качество</ins></strong> = <span class="sub">Индивидуальный подход</span> + <span class="sup">Надёжность</span></p>
+            <ul>
+                <li><strong>Экологически чистые продукты</strong></li>
+                <li><em>Быстрая доставка по городу</em></li>
+                <li><b>Выгодные цены и скидки</b></li>
+                <li class="strikethrough">ГМО</li> 
+            </ul>
+        </section>
+
+        <section class="products-prices">
+            <h2>Наши цены</h2>
+            <div class="prices-grid">
+                <div class="prices-grid__header">Продукт</div>
+                <div class="prices-grid__header">Цена</div>
+                <div class="prices-grid__header">За сколько кг</div>
+                <div>Яблоки</div>
+                <div>100 ₽</div>
+                <div>1</div>
+                <div>Бананы</div>
+                <div>150 ₽</div>
+                <div>1</div>
+                <div>Апельсины</div>
+                <div>120 ₽</div>
+                <div>1</div>
+                <div>Груши</div>
+                <div>110 ₽</div>
+                <div>1</div>
+                <div>Киви</div>
+                <div>180 ₽</div>
+                <div>1</div>
+                <div>Клубника</div>
+                <div>200 ₽</div>
+                <div>1</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h2 class="contacts__title">Контакты</h2>
+        <p class="contacts__item">Телефон: <a href="tel:+79001234567"><strong>+7 (900) 123-45-67</strong></a></p>
+        <p class="contacts__item">Email: <a href="mailto:fruits@example.com"><strong>fruits@example.com</strong></a></p>
+        <p>Магазин свежих фруктов, 2024</p>
+        <p class="underline">Обратите внимание на наши специальные предложения!</p> 
+</body>
+</html>
