@@ -57,29 +57,31 @@ body {
 }
 
 .catalog__items {
-    display: grid;
-    grid-template-rows: auto;
-    gap: 0.1rem;
-    padding: 0.1rem;
+    display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
     justify-content: space-between;
-    flex: 1 1 30%;
     margin: 0.625rem;
+}
+
+.catalog__item {
+    flex: 1 1 calc(30% - 1rem);
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
     padding: 0.625rem;
     border-radius: 0.3125rem;
     text-align: center;
     background-color: #fff;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-}
-
-.catalog__item {
-    display: grid;
-    padding: 1rem;
+    border: 1px solid #ddd;
 }
 
 .about {
     position: relative;
+    padding: 1.25rem;
+    background-color: white;
+    margin: 1.25rem 0;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
 }
 
 .banner {
@@ -223,15 +225,6 @@ body {
     font-weight: bold;
 }
 
-.about {
-    padding: 1.25rem;
-    background-color: white;
-    margin: 1.25rem 0;
-    border-radius: 0.3125rem;
-    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
-    font-size: 1rem;
-}
-
 .contacts__title {
     font-size: 1.5rem;
     font-weight: 700;
@@ -314,27 +307,45 @@ u {
 
 .products-prices {
     padding: 1.875rem;
-}
-
-.prices-grid {
-    margin: 0 auto 3.125rem;
-    max-width: 31.25rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
 }
 
-.prices-grid__header {
+.prices-grid__item {
+    background-color: #f7f7f7;
+    padding: 1.25rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.3125rem;
     text-align: center;
-    font-weight: 600;
 }
 
-.prices-grid > div {
-    padding: 0.5rem 0.75rem;
+.prices-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
 }
 
-.prices-grid > div:nth-of-type(6n + 4),
-.prices-grid > div:nth-of-type(6n + 5),
-.prices-grid > div:nth-of-type(6n + 6) {
-    background: #eeeeee86;
+.prices-table th, 
+.prices-table td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
+.prices-table th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+}
+
+.prices-table td {
+    background-color: #fff;
+}
+
+.prices-table tr:nth-child(odd) td{
+    background-color: #f2f2f2; 
+}
+
+.prices-table tr:nth-child(even) td{
+    background-color: #E91E63; 
+}
