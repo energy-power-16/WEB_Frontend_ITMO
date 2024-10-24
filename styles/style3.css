@@ -352,10 +352,10 @@ u {
     /* grid-column: span 4; */
 }
 
-.prices-table tr:nth-child(odd) td {
+.prices-table tr:nth-child td {
     background-color: #f2f2f2;
 }
 
-.prices-table tr:nth-child(even) td {
+.prices-table tr:nth-child(3n) td {
     background-color: #E91E63;
 }
