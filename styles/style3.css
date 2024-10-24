@@ -307,9 +307,9 @@ u {
 
 .products-prices {
     padding: 1.875rem;
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
+    gap: 1.25rem; */
 }
 
 .prices-grid__item {
@@ -321,9 +321,19 @@ u {
 }
 
 .prices-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr;
+    max-width: 1000px;
+    margin: 1rem auto;
+    gap: 1px;
+}
+
+.prices-table tbody, .prices-table thead, .prices-table tr {
+    display: contents;
+}
+
+.prices-table tr {
+    display: contents;
 }
 
 .prices-table th, 
@@ -331,21 +341,21 @@ u {
     padding: 0.75rem;
     border: 1px solid #ddd;
     text-align: center;
+    background-color: #fff;
+
+    overflow: hidden;
 }
 
 .prices-table th {
     background-color: #f7f7f7;
     font-weight: bold;
+    /* grid-column: span 4; */
 }
 
-.prices-table td {
-    background-color: #fff;
+.prices-table tr:nth-child(odd) td {
+    background-color: #f2f2f2;
 }
 
-.prices-table tr:nth-child(odd) td{
-    background-color: #f2f2f2; 
-}
-
-.prices-table tr:nth-child(even) td{
-    background-color: #E91E63; 
+.prices-table tr:nth-child(even) td {
+    background-color: #E91E63;
 }
