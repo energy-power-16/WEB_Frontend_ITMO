@@ -24,7 +24,7 @@
     </header>
 
     <main class="main-content">
-        <form onsubmit="submitProccessing(event)" class="add-product-form">
+        <form onsubmit="submitProcessing(event)" class="add-product-form">
             <label>
                 Название продукта:
                 <input type="text" class="name">
@@ -38,8 +38,15 @@
             </button>
         </form>
         <div class="gen-results">
-            
         </div>
+
+        <template id="product-template">
+            <div class="product-item">
+                <p class="product-name">Название продукта: <span class="name-value"></span></p>
+                <p class="product-count">Количество: <span class="count-value"></span></p>
+                <button class="btn-delete">Удалить запись</button>
+            </div>
+        </template>
     </main>
     <footer class="footer">
         <h2 class="contacts__title">Контакты</h2>

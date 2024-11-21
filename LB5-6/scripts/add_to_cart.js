@@ -1,21 +1,35 @@
 let products = [];
 
-function submitProccessing(ev)
-{
-    ev.preventDefault()
-    const product_form = document.querySelector('.add-product-form')
-    const input_name = product_form.querySelector('.name')
-    const input_count = product_form.querySelector('.count')
-    const name = input_name.value
-    const count = input_count.value 
-    add_product(name,count)
-    const product = {
-        name: name,
-        count: count,
-    };
-    products.push(product)
-    localStorage.setItem('products', JSON.stringify(products))
+function submitProcessing(event) {
+    event.preventDefault();
+    const nameInput = document.querySelector('.name');
+    const countInput = document.querySelector('.count');
+    const name = nameInput.value.trim();
+    const count = countInput.value.trim();
+    if (!name || !count) {
+        alert('Пожалуйста, заполните все поля.');
+        return;
+    }
+    if (!/^\d+$/.test(count)) {
+        alert("Ошибка: Количество должно быть числовым значением.");
+        return;
+    }
+    nameInput.value = '';
+    countInput.value = '';
+    const template = document.getElementById('product-template');
+    const clone = template.content.cloneNode(true);
+    clone.querySelector('.name-value').textContent = name;
+    clone.querySelector('.count-value').textContent = count;
+    const deleteButton = clone.querySelector('.btn-delete');
+    deleteButton.addEventListener('click', () => {
+        const productItem = deleteButton.closest('.product-item');
+        productItem.remove();
+    });
+    const resultsContainer = document.querySelector('.gen-results');
+    resultsContainer.appendChild(clone);
 }
+
+
 
 function add_product(name, count){
     const gen_results = document.querySelector('.gen-results')
