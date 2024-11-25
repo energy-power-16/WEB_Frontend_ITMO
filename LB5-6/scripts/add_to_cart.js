@@ -1,58 +1,60 @@
-let products = [];
+const STORAGE_KEY = "products";
+document.addEventListener("DOMContentLoaded", () => {
+    const savedProducts = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    savedProducts.forEach(product => addProductToDOM(product.name, product.count));
+});
+function addProductToDOM(name, count) {
+    const template = document.getElementById("product-template");
+    const clone = template.content.cloneNode(true);
+    clone.querySelector(".name-value").textContent = name;
+    clone.querySelector(".count-value").textContent = count;
+    const deleteButton = clone.querySelector(".btn-delete");
+    deleteButton.addEventListener("click", () => {
+        const productItem = deleteButton.closest(".product-item");
+        productItem.remove();
+        removeProductFromStorage(name);
+    });
+    const resultsContainer = document.querySelector(".gen-results");
+    resultsContainer.appendChild(clone);
+}
 
 function submitProcessing(event) {
     event.preventDefault();
-    const nameInput = document.querySelector('.name');
-    const countInput = document.querySelector('.count');
+    const nameInput = document.querySelector(".name");
+    const countInput = document.querySelector(".count");
     const name = nameInput.value.trim();
     const count = countInput.value.trim();
+
     if (!name || !count) {
-        alert('Пожалуйста, заполните все поля.');
+        alert("Пожалуйста, заполните все поля.");
         return;
     }
-    if (!/^\d+$/.test(count)) {
-        alert("Ошибка: Количество должно быть числовым значением.");
+    if(!isPositiveInt(cost)){
+        alert('Количество должно быть целым положительным числом');
         return;
     }
     nameInput.value = '';
     countInput.value = '';
-    const template = document.getElementById('product-template');
-    const clone = template.content.cloneNode(true);
-    clone.querySelector('.name-value').textContent = name;
-    clone.querySelector('.count-value').textContent = count;
-    const deleteButton = clone.querySelector('.btn-delete');
-    deleteButton.addEventListener('click', () => {
-        const productItem = deleteButton.closest('.product-item');
-        productItem.remove();
-    });
-    const resultsContainer = document.querySelector('.gen-results');
-    resultsContainer.appendChild(clone);
+    addProductToDOM(name, count);
+    saveProductToStorage(name, count);
+}
+
+function saveProductToStorage(name, count) {
+    const savedProducts = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    savedProducts.push({ name, count });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(savedProducts));
+}
+
+function removeProductFromStorage(name) {
+    let savedProducts = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    savedProducts = savedProducts.filter(product => product.name !== name);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(savedProducts));
+}
+
+function isPositiveInt(v) {
+    const a = +v;
+    return Number.isInteger(a) && a > 0;
 }
 
 
 
-function add_product(name, count){
-    const gen_results = document.querySelector('.gen-results')
-    const addedEl = document.createElement('div')
-    const addedEl1 = document.createElement('div')
-    addedEl.textContent = name
-    addedEl.classList.add('product-name')
-    addedEl1.textContent = count
-    addedEl1.classList.add('product-count')
-    gen_results.append(addedEl)
-    gen_results.append(addedEl1)    
-}
-
-document.addEventListener('DOMContentLoaded', loadProducts)
-
-function loadProducts(){
-    const productsInLS = localStorage.getItem('products')
-    if(!productsInLS){
-        return
-    }
-    products = JSON.parse(productsInLS)
-    for (const product of products)
-    {
-        add_product(product.name, product.count)
-    }
-}
