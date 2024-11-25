@@ -29,7 +29,7 @@ function submitProcessing(event) {
         alert("Пожалуйста, заполните все поля.");
         return;
     }
-    if(!isPositiveInt(cost)){
+    if(!isPositiveInt(count)){
         alert('Количество должно быть целым положительным числом');
         return;
     }
