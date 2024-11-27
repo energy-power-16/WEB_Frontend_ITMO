@@ -1,8 +1,10 @@
-const STORAGE_KEY = "products";
 document.addEventListener("DOMContentLoaded", () => {
-    const savedProducts = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-    savedProducts.forEach(product => addProductToDOM(product.name, product.count));
+    const savedProducts = JSON.parse(localStorage.getItem("products")) || [];
+    for (const product of savedProducts) {
+	    addProductToDOM(product.name, product.count);
+    }
 });
+
 function addProductToDOM(name, count) {
     const template = document.getElementById("product-template");
     const clone = template.content.cloneNode(true);
@@ -26,7 +28,7 @@ function submitProcessing(event) {
     const count = countInput.value.trim();
 
     if (!name || !count) {
-        alert("Пожалуйста, заполните все поля.");
+        alert("Заполните все поля, укажите названия продукта и количество");
         return;
     }
     if(!isPositiveInt(count)){
@@ -40,13 +42,13 @@ function submitProcessing(event) {
 }
 
 function saveProductToStorage(name, count) {
-    const savedProducts = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    const savedProducts = JSON.parse(localStorage.getItem("products")) || [];
     savedProducts.push({ name, count });
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(savedProducts));
+    localStorage.setItem("products", JSON.stringify(savedProducts));
 }
 
 function removeProductFromStorage(name) {
-    let savedProducts = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    let savedProducts = JSON.parse(localStorage.getItem("products")) || [];
     savedProducts = savedProducts.filter(product => product.name !== name);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(savedProducts));
 }
@@ -55,6 +57,3 @@ function isPositiveInt(v) {
     const a = +v;
     return Number.isInteger(a) && a > 0;
 }
-
-
-
