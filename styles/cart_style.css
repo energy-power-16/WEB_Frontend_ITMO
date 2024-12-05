@@ -1,0 +1,50 @@
+.main-content {
+    background: rgb(39,35,43);
+    color: rgb(76,175,80);
+}
+
+
+label
+{
+    display: block;
+}
+
+.add-product-form
+{
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.name, .count {
+    background: gray;
+}
+
+.btn-add-product {
+    background: #00ff0a;
+}
+
+.gen-results
+{
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+.product-name
+{
+    padding: 5px 12px
+
+}
+.btn-delete {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-delete:hover {
+    background-color: #ff1a1a;
+}
