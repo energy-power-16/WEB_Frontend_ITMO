@@ -1,0 +1,20 @@
+{
+  "name": "web_frontend_itmo",
+  "version": "1.0.0",
+  "description": "## Автор **Богданов Никита**, Группа: М3313",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vex-dialog": "^1.1.0",
+    "vex-js": "^4.1.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
+  }
+}

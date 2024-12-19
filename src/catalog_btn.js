@@ -1,4 +1,4 @@
-'use strict';
+import vex from 'vex-js';
 
 (function() {
   document.addEventListener('DOMContentLoaded', start);
@@ -19,8 +19,8 @@
         '<input name="password" type="password" placeholder="Password" required />'
       ].join(''),
       buttons: [
-        $.extend({}, vex.dialog.buttons.YES, { text: 'Login' }),
-        $.extend({}, vex.dialog.buttons.NO, { text: 'Back' })
+        Object.assign({}, vex.dialog.buttons.YES, { text: 'Login' }),
+        Object.assign({}, vex.dialog.buttons.NO, { text: 'Back' })
       ],
       callback: function (data) {
         if (!data) {

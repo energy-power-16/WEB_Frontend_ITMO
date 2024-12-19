@@ -1,11 +1,13 @@
-'use strict';
+import vex from 'vex-js';
 
 (function(){
   document.addEventListener('DOMContentLoaded', start);
 
   function start() {
     const btn = document.querySelector('.btn-load-comments');
-    btn.addEventListener('click', btnLoadClick);
+    if (btn) {
+      btn.addEventListener('click', btnLoadClick);
+    }
   }
 
   function btnLoadClick() {

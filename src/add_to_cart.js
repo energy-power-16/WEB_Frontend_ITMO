@@ -3,10 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const product of savedProducts) {
 	    addProductToDOM(product.name, product.count);
     }
+
+    const addProductForm = document.querySelector('.add-product-form');
+    if (addProductForm) {
+        addProductForm.addEventListener('submit', submitProcessing);
+    }
 });
 
 function addProductToDOM(name, count) {
     const template = document.getElementById("product-template");
+    if (!template) {
+        return;
+    }
     const clone = template.content.cloneNode(true);
     clone.querySelector(".name-value").textContent = name;
     clone.querySelector(".count-value").textContent = count;
@@ -50,7 +58,7 @@ function saveProductToStorage(name, count) {
 function removeProductFromStorage(name) {
     let savedProducts = JSON.parse(localStorage.getItem("products")) || [];
     savedProducts = savedProducts.filter(product => product.name !== name);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(savedProducts));
+    localStorage.setItem("products", JSON.stringify(savedProducts));
 }
 
 function isPositiveInt(v) {
